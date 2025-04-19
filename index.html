@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPAIWEBDEV</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Standard favicon -->
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    <!-- Apple Touch Icon for iOS devices -->
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+    <!-- Additional sizes for Apple Touch Icons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/img/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/img/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/img/apple-touch-icon-152x152.png"
+    />
+    <style>
+      header {
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      body {
+        margin-top: 70px; /* Adjust this value based on the height of your header */
+      }
+      .about-section {
+        background-image: url(img/woodish.jpg);
+        padding: 50px 0;
+      }
+      .about-text {
+        font-family: "Arial", sans-serif;
+        color: black;
+        font-size: xx-large;
+      }
+      .icon-card {
+        text-align: center;
+        padding: 20px;
+        color: #020202;
+        border-radius: 5px;
+        transition: transform 0.3s, background-color 0.3s;
+      }
+      .icon-card:hover {
+        transform: scale(1.05);
+      }
+      .icon-card i {
+        font-size: 2em;
+        margin-bottom: 10px;
+        color: white;
+      }
+      .icon-card h5 {
+        margin-top: 10px;
+        font-size: 1.2em;
+        color: white;
+      }
+      .icon-card a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .project-section {
+        padding: 50px 0;
+        background-image: url(img/blash.jpg);
+      }
+      .project-card {
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      .project-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+      }
+      .package-section {
+        background-color: #f8f9fa;
+        padding: 50px 0;
+      }
+      .package-card {
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+      }
+      .review-section {
+        background-color: grey;
+        color: white;
+        padding: 50px 0;
+      }
+      .review-card {
+        border: none;
+        background-color: transparent;
+        color: white;
+      }
+      .footer {
+        background-color: #000000;
+        color: white;
+        padding: 30px 0;
+      }
+      .footer a {
+        color: white;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        color: #28a745;
+      }
+      .project-card img {
+        transition: transform 0.3s;
+      }
+      .project-card img:hover {
+        transform: scale(1.05);
+      }
+      .project-card a {
+        text-decoration: none;
+        color: black;
+      }
+      .project-card a:hover {
+        text-decoration: underline;
+      }
+      .projectTitle {
+        color: rgb(10, 9, 9);
+        text-align: center;
+        padding: auto;
+      }
+      #back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        width: 40px;
+        height: 40px;
+        background-color: #6a922a;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+        font-size: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      #back-to-top:hover {
+        background-color: #555;
+      }
+      .custom-card-color {
+        background-image: url(img/ddbackground.jpg);
+      }
+      nav a {
+        font-weight: bold;
+        color: #000;
+      }
+      .carde {
+        border: 1px solid #000000;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px;
+        background-color: #fcf8f8;
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+      }
+      .carde h1 {
+        color: grey;
+        text-align: center;
+      }
+      .carde ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .carde ul li {
+        text-align: left;
+        margin: 10px 0;
+      }
+      #ai-sec {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+      .ai-icon {
+        font-size: 48px;
+        color: #007bff;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="preloader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <section id="Home">
+      <header class="bg-white py-3 border-bottom">
+        <div
+          class="container d-flex justify-content-between align-items-center"
+        >
+          <div>
+            <h1 class="m-0">
+              <span class="tag" style="color: green">&lt;</span>
+              <span class="text" style="color: green">IPAIWEBDEV</span>
+              <span class="tag" style="color: green">/&gt;</span>
+            </h1>
+            <p class="m-0">"Occupy The Web with Us "</p>
+          </div>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html"> </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a href="#ai-sec" class="nav-link">How we Leverage AI</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#ISP-section" class="nav-link">Hosting</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#sale" class="nav-link">Sale</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#contact" class="nav-link">Contact us</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="text-center my-5">
+        <div class="container">
+          <p class="lead text-success">Discover an Online presence with</p>
+          <div id="typed-output"></div>
+        </div>
+      </main>
+    </section>
+    <section id="about">
+      <section class="about-section">
+        <div class="container-fluid bg-light">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5">
+                <div
+                  class="d-flex flex-column align-items-center justify-content-center h-100 py-5 px-3"
+                  style="background-color: rgb(0, 0, 0)"
+                >
+                  <i
+                    class="flaticon-brickwall display-1 font-weight-normal text-secondary mb-3"
+                    style="color: white"
+                  ></i>
+                  <h4 class="display-3 mb-3" style="color: white">5+</h4>
+                  <h1 class="m-0" style="color: white">Years Experience</h1>
+                </div>
+              </div>
+              <div class="col-lg-7 m-0 my-lg-5 pt-5 pb-5 pb-lg-2 pl-lg-5">
+                <h6 class="text-primary font-weight-normal text-uppercase mb-3">
+                  Learn About Us
+                </h6>
+                <h1 class="mb-4 section-title">
+                  Web Design and Digital Marketing Agency
+                </h1>
+                <p>
+                  In today's competitive digital age, a strong and professional
+                  online presence is essential for success. We're here to help
+                  you establish a powerful digital footprint that drives
+                  business growth and sets you apart in the digital world.
+                </p>
+                <div class="row py-2">
+                  <div class="col-sm-6">
+                    <div class="d-flex align-items-center mb-4">
+                      <h1 class=""></h1>
+                      <h5 class="text-truncate m-0">
+                        Web Design & Development
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="d-flex align-items-center mb-4">
+                      <h1 class=""></h1>
+                      <h5 class="text-truncate m-0">
+                        Search Engine Optimization
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="d-flex align-items-center mb-4">
+                      <h1 class=""></h1>
+                      <h5 class="text-truncate m-0">
+                        Mobile App UI & UX Design
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="d-flex align-items-center mb-4">
+                      <h1 class=""></h1>
+                      <h5 class="text-truncate m-0">Database Solutions</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section id="projectsection">
+      <section class="project-section">
+        <div class="container">
+          <h2 class="projectTitle" style="color: white">
+            Our Web Design & Development Projects
+          </h2>
+          <br />
+          <br />
+          <div class="row">
+            <div class="col-md-3 mb-4">
+              <a
+                href="https://opcurtainsandinteriors.github.io/OPcurtains-interior.co.za/#Home"
+              >
+                <div class="project-card">
+                  <img src="img/image.png" alt="Project 1" />
+                  <p>click here to view project</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a href="https://peteripai.github.io/PinelPark/">
+                <div class="project-card">
+                  <img src="img/Pineparkwebsite.png" alt="Project 2" />
+                  <p>click here to view project</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a href="https://peteripai.github.io/Techsolutionsandrepair/">
+                <div class="project-card">
+                  <img src="img/repairsolutions.png" alt="Project 3" />
+                  <p>Click here to view project</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a href="https://peteripai.github.io/JobSearch/">
+                <div class="project-card">
+                  <img src="img/jobsearch.png" alt="Project 4" />
+                  <p>Click here to view project</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a href="https://peteripai.github.io/TravelwithUS/">
+                <div class="project-card">
+                  <img src="img/travelwebsite.png" alt="Project 5" />
+                  <p>Click here to view project</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a href="https://peteripai.github.io/Gymsite/">
+                <div class="project-card">
+                  <img src="img/gymsite.png" alt="Project 6" />
+                  <p>Click here to view project</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a href="https://peteripai.github.io/devschool/">
+                <div class="project-card">
+                  <img src="img/sitedevschool.png" alt="Project 6" />
+                  <p>Click here to view project</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-md-3 mb-4">
+              <a href="https://peteripai.github.io/carmechanics/">
+                <div class="project-card">
+                  <img src="img/AU.png" alt="Project 8" />
+                  <p>Click here to view project</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a href="https://peteripai.github.io/Headphonelandingpage/">
+                <div class="project-card">
+                  <img src="img/headphone.png" alt="Project 8" />
+                  <p>Click here to view project</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a href="https://peteripai.github.io/BarberShop/">
+                <div class="project-card">
+                  <img src="img/kingoffade.png" alt="Project 1" />
+                  <p>click here to view project</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a href="https://peteripai.github.io/Eardrummers/">
+                <div class="project-card">
+                  <img src="img/eardrummers.png" alt="Project 6" />
+                  <p>Click here to view project</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 mb-4">
+              <a href="https://peteripai.github.io/Dronecommercials/">
+                <div class="project-card">
+                  <img src="img/dronecommercial.png" alt="Project 6" />
+                  <p>Click here to view project</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!--Slide banner -->
+
+    <div
+      style="
+        text-align: center;
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+      "
+    >
+      <iframe
+        src="https://www.powtoon.com/embed/cZ1PRq3sHO6/"
+        frameborder="0"
+        allowfullscreen
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+      ></iframe>
+    </div>
+
+    <section id="sale">
+      <div
+        style="
+          text-align: center;
+          background-color: black;
+          padding: 20px;
+          color: #d82222;
+          font-family: italic;
+        "
+      >
+        <br />
+        <img src="img/ADD.jpg" style="max-width: 100%; height: auto" />
+      </div>
+    </section>
+    <br />
+
+    <div
+      style="
+        text-align: center;
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+      "
+    >
+      <iframe
+        src="https://www.powtoon.com/embed/cv77oCNszfN/"
+        frameborder="0"
+        allowfullscreen
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+      ></iframe>
+    </div>
+
+    <section id="ai-sec">
+        <div class="ai-section">
+          <div class="carde">
+            <div>
+              <i class="fa-solid fa-microchip ai-icon"></i>
+            </div>
+            <div>
+              <h2>AI in Software Development</h2>
+              <ul>
+                <li>
+                  #Automated Code Generation: AI can assist in writing code, making
+                  the development process faster and less error-prone.
+                </li>
+                <li>
+                  #Error-free Development: AI helps eliminate human errors during
+                  the web development process, reducing bugs and improving code
+                  quality.
+                </li>
+                <li>
+                  #Effective Content: AI helps generate content for your business
+                  to increase search engine optimization.
+                </li>
+                <li>
+                  #Rapid Development: AI tools can quickly generate website design
+                  ideas, allowing us to bring them to life with our web design
+                  skills.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>>
+
+    <!--Elfsight contact form -->
+    <section id="contact">
+      <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    
+      <div class="elfsight-app-ec7a5ff7-7fe1-42cf-8e94-86aa072a2497"></div>
+    </section>
+
+    <!--Elfsight contact form -->
+
+    <!-- Back to Top Arrow -->
+    <a href="#Home" id="back-to-top" title="Back to Top">&uarr;</a>
+    <script src="script.js"></script>
+    <div>
+      <script
+        src="https://static.elfsight.com/platform/platform.js"
+        data-use-service-core
+        defer
+      ></script>
+      <div
+        class="elfsight-app-a9a68531-e682-4713-b0dd-c57f6bdbfcd5"
+        data-elfsight-app-lazy
+      ></div>
+    </div>
+
+    <div>
+      <script
+        src="https://static.elfsight.com/platform/platform.js"
+        async
+      ></script>
+      <div
+        class="elfsight-app-08ac6376-b443-424f-995e-c6be24781746"
+        data-elfsight-app-lazy
+      ></div>
+    </div>
+
+    <section id="footer">
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <h5 style="color: white">About Us</h5>
+              <p>
+                We provide a wide range of web development and digital marketing
+                services to help businesses grow online. Contact us to learn
+                more about how we can assist you in achieving your digital
+                goals.
+              </p>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5 style="color: green">IPAIWEBDEV</h5>
+                    <p>"Occupy The Web with Us "</p>
+                  </div>
+                  <div class="col-md-6 text-md-right">
+                    <ul class="list-unstyled">
+                      <p style="color: green; font-weight: bold">Quick Links</p>
+                      <li><a href="#Home">Home</a></li>
+                      <li><a href="#packagesection">Packages</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <h5 style="color: white">Contact Information</h5>
+              <div class="contact-info">
+                <div>
+                  <i class="fas fa-map-marker-alt"></i> Location: 144 Peter
+                  Road, Ruimsig, Johannesburg
+                </div>
+                <div>
+                  <i class="fas fa-phone-alt"></i> Business contact: +27 81 436
+                  6939
+                </div>
+                <div>
+                  <i class="fas fa-envelope"></i> Email:
+                  <a href="mailto:admin@ipaiwebdev.co.za"
+                    >admin@ipaiwebdev.co.za</a
+                  >
+                </div>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.477194701646!2d27.87388007507869!3d-26.08333715906176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e959ef5277b96a7%3A0xc4aa15508f8e5e8c!2sIIE%20MSA!5e0!3m2!1sen!2sza!4v1719337399716!5m2!1sen!2sza"
+                width="100"
+                height="100"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="col-md-4 mb-4">
+              <h5 style="color: white">Follow Us & Chat with us</h5>
+              <a
+                href="https://www.facebook.com/ipaiwebdev AI"
+                class="fab fa-facebook-f fa-2x mx-2"
+              ></a>
+              <a
+                href="https://www.instagram.com/ipaiwebdev/"
+                class="fab fa-instagram fa-2x mx-2"
+              ></a>
+              <a
+                href="https://wa.me/+27814366939"
+                class="fab fa-whatsapp fa-2x mx-2"
+              ></a>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <a href="#contact" class="btn btn-success">Get a Quote</a>
+            <a href="#contact" class="btn btn-outline-light"
+              >Send comment if you Like what you see</a
+            >
+          </div>
+
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 40vh;
+            "
+          >
+            <p>2025 | Designed IPAIWEBDEV| All rights reserved |</p>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var backToTop = document.getElementById("back-to-top");
+
+        // Show or hide the button
+        window.onscroll = function () {
+          if (
+            document.body.scrollTop > 200 ||
+            document.documentElement.scrollTop > 200
+          ) {
+            backToTop.style.display = "block";
+          } else {
+            backToTop.style.display = "none";
+          }
+        };
+
+        // Scroll to the top smoothly
+        backToTop.addEventListener("click", function (event) {
+          event.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>
+
+</body>
